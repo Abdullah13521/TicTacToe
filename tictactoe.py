@@ -5,7 +5,7 @@ gameBoard = {7: ' ' , 8: ' ' , 9: ' ' ,
          4: ' ' , 5: ' ' , 6: ' ' ,
          1: ' ' , 2: ' ' , 3: ' ' }
 
-# lists for the possible moves, corner and middle square positions
+# lists for the possible moves and middle squares and dictionary for the corners
 possible_moves = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 corners = {1:9, 3:7, 7:3, 9:1}
 middle_squares = [2, 4, 6, 8]
@@ -164,6 +164,7 @@ def game():
                 gameBoard[check_empty(gameBoard, corners).pop()] = turn
             elif check_empty(gameBoard, middle_squares).pop() != 0:
                 gameBoard[check_empty(gameBoard, middle_squares).pop()] = turn
+         
             count += 1
 
         # check if someone won already
@@ -173,6 +174,7 @@ def game():
                 print("Game Over!")
                 print(turn + " won!")
                 break
+                  
         # check if game is over
         if count == 9:
             print("Game Over!")
